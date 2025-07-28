@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Chandan Sengupta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Door Overlay with hacking animation -->
+    <div id="doorOverlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:#111;z-index:9999;transition:transform 1s cubic-bezier(.77,0,.18,1);overflow:hidden;">
+        <img src="logos/door.jpg" alt="Closed Door" style="position:absolute;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:1;">
+        <canvas id="matrixCanvas" style="position:absolute;top:0;left:0;width:100vw;height:100vh;z-index:2;pointer-events:none;"></canvas>
+        <button id="openDoorBtn" style="position:absolute;bottom:10vh;left:50%;transform:translateX(-50%);padding:16px 40px;font-size:1.3em;border:none;border-radius:10px;background:#f5c16c;color:#222;cursor:pointer;z-index:3;box-shadow:0 2px 12px #000;">Get Inside</button>
+    </div>
+    <header>
+        <div class="container">
+            <h1>Chandan Sengupta</h1>
+            <p class="tagline">AI Engineer | Kolkata | csengupta1101@outlook.com | +917044083275 </p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main style="animation: fadeInUp 1.2s;">
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>Results-driven 
+            Data Scientist with 4.5+ years of experience across insurance, manufacturing, and e-commerce 
+            domains. Proficient in Python, SQL, Machine Learning (ML), Deep Learning (DL), 
+            and Large Language Models (LLMs), with Hands-on experience with various cloud platforms 
+            (e.g., AWS, Azure). Prefer Azure  / Synapse/OpenAI/VsCode/ADF. Adept at building end-to-end 
+            data-driven products, optimizing business processes, and translating complex data into 
+            actionable insights to drive strategic decisions.</p>
+        </section>
+
+        <section id="skills-by-type" class="section">
+            <h2>Skills - Click To Expand</h2>
+            <div class="skills-table-collapsible-container">
+                <table class="skills-table-collapsible">
+                    <thead>
+                        <tr>
+                            <th class="collapsible-skill-header" data-skill="cloud">Cloud</th>
+                            <th class="collapsible-skill-header" data-skill="languages">Languages</th>
+                            <th class="collapsible-skill-header" data-skill="tools">Tools</th>
+                            <th class="collapsible-skill-header" data-skill="modules">Modules</th>
+                            <th class="collapsible-skill-header" data-skill="softskills">Soft Skills</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="skills-row skills-cloud" style="display:none;">
+                            <td>
+                                <ul>
+                                    <li>Azure Databricks</li>
+                                    <li>Azure Data Factory</li>
+                                    <li>Azure Synapse</li>
+                                    <li>Azure SQL</li>
+                                    <li>ADLS Gen 2</li>
+                                    <li>Azure Open AI</li>
+                                    <li>Azure ML Studio</li>
+                                    <li>Azure ML Flow</li>
+                                </ul>
+                            </td>
+                            <td colspan="4"></td>
+                        </tr>
+                        <tr class="skills-row skills-languages" style="display:none;">
+                            <td></td>
+                            <td>
+                                <ul>
+                                    <li>Python</li>
+                                    <li>SQL Server</li>
+                                    <li>MySQL</li>
+                                    <li>PySpark</li>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                </ul>
+                            </td>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr class="skills-row skills-tools" style="display:none;">
+                            <td colspan="2"></td>
+                            <td>
+                                <ul>
+                                    <li>SSMS</li>
+                                    <li>Workbench</li>
+                                    <li>Tableau</li>
+                                    <li>Excel</li>
+                                    <li>Jira</li>
+                                    <li>Figma</li>
+                                    <li>Power BI</li>
+                                </ul>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr class="skills-row skills-modules" style="display:none;">
+                            <td colspan="3"></td>
+                            <td>
+                                <ul>
+                                    <li>Data Science</li>
+                                    <li>Machine Learning</li>
+                                    <li>ELT/ETL</li>
+                                    <li>Deep Learning</li>
+                                    <li>LLM</li>
+                                    <li>GenAI</li>
+                                    <li>Pandas, Numpy</li>
+                                    <li>Matplotlib, Seaborn</li>
+                                    <li>Scikit-Learn</li>
+                                    <li>NLP Frameworks</li>
+                                    <li>Data Engineering</li>
+                                    <li>MLOps</li>
+                                    <li>Tensorflow</li>
+                                </ul>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="skills-row skills-softskills" style="display:none;">
+                            <td colspan="4"></td>
+                            <td>
+                                <ul>
+                                    <li>Strong communication skills for cross-functional collaboration</li>
+                                    <li>Leadership and team management capabilities</li>
+                                    <li>Problem-solving and critical thinking under tight deadlines</li>
+                                    <li>Project planning and task prioritization</li>
+                                    <li>Mentoring and skill development for junior team members</li>
+                                    <li>Stakeholder management and requirements gathering</li>
+                                    <li>Adaptability to fast-changing technologies and business needs</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="experience" class="section">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3 class="collapsible">
+                    <img src="logos/cognizant.png" alt="Cognizant Logo" style="height:60px;vertical-align:middle;margin-right:12px;">
+                    AI Engineer at Cognizant Technology Solution <span>2024 - Current</span>
+                </h3>
+                <ul class="collapsible-content" style="display:none;">
+                    <li>Led data migration and scalable data ingestion pipelines using Azure Synapse, Data Factory, and SQL Pools.</li>
+                    <li>Developed and deployed machine learning workflows for predictive analytics.</li>
+                    <li>Automated monitoring and alerting to enhance operational efficiency and reduce downtime.</li>
+                    <li>Mentored junior team members on Azure data services and ML workflow integration.</li>
+                    <li>Designed interactive Power BI dashboards for real-time monitoring and analytics.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3 class="collapsible">
+                    <img src="logos/shyamsteel.png" alt="Shyam Steel Logo" style="height:40px;vertical-align:middle;margin-right:8px;">
+                    Sr Data Scientist at Shyam Steel Industries Ltd <span>2023 - 2024</span>
+                </h3>
+                <ul class="collapsible-content" style="display:none;">
+                    <li>Designed and implemented GenAI chatbot solutions using Azure OpenAI Services.</li>
+                    <li>Utilized GPT models for text summarization and embedding workflows.</li>
+                    <li>Managed production deployment and monitoring of LLM solutions via Azure ML endpoints.</li>
+                    <li>Integrated secure authentication and governance protocols for LLM API access.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3 class="collapsible">
+                    <img src="logos/amazon.png" alt="Amazon Logo" style="height:30px;vertical-align:middle;margin-right:8px;">
+                    Sr Associate at Amazon Development Centre <span>2021 - 2023</span>
+                </h3>
+                <ul class="collapsible-content" style="display:none;">
+                    <li>Developed regression and classification models for business analytics and reporting.</li>
+                    <li>Built interactive dashboards in AWS QuickSight for executive stakeholders.</li>
+                    <li>Executed ETL pipelines and optimized models using AWS Glue and Sagemaker.</li>
+                    <li>Experimented with GenAI foundation models and Lambda functions for text/image generation.</li>
+                </ul>
+            </div>
+        </section>
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="project-item">
+                <h3 class="collapsible">Data & ML Pipeline Ingestion - Cognizant Project</h3>
+                <ul class="collapsible-content" style="display:none;">
+                    <li>Led data migration from legacy systems to Azure Cloud using Azure Synapse Analytics and Dedicated SQL Pools.</li>
+                    <li>Designed and implemented scalable data ingestion pipelines leveraging Azure Data Factory (ADF), Logic Apps, and Azure Function Apps.</li>
+                    <li>Developed and optimized data models in Synapse and SQL Server to enable efficient querying and reporting.</li>
+                    <li>Utilized Databricks for advanced data transformation, data wrangling, and SQL-based analytics workflows.</li>
+                    <li>Built and deployed machine learning workflows within Synapse pipelines and ADF for predictive analytics use cases.</li>
+                    <li>Ensured data quality, governance, and security compliance across the ingestion and ML pipelines.</li>
+                    <li>Collaborated with cross-functional teams (engineering, analytics, and business) to define cloud architecture and deliver robust solutions.</li>
+                    <li>Automated monitoring and alerting of data pipelines to enhance operational efficiency and reduce downtime.</li>
+                    <li>Mentored junior team members on Azure data services best practices and machine learning workflow integration.</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <h3 class="collapsible">Daily Job Trigger Dashboard - Cognizant Project</h3>
+                <ul class="collapsible-content" style="display:none;">
+                    <li>Designed and developed interactive Power BI dashboards connected to SQL Server databases for real-time monitoring of daily triggered pipeline jobs.</li>
+                    <li>Built robust data models and DAX measures to enable deep-dive analytics on pipeline performance, failures, and processing times.</li>
+                    <li>Automated refresh schedules and optimized Power BI datasets for improved dashboard performance and user experience.</li>
+                    <li>Implemented row-level security (RLS) to control user access and ensure data confidentiality in reporting layers.</li>
+                    <li>Collaborated with data engineers and business stakeholders to gather requirements and translate them into actionable reporting solutions.</li>
+                    <li>Created visually compelling KPIs, trend analyses, and failure rate reports to support operational decision-making.</li>
+                    <li>Integrated custom alerts and Power BI subscriptions to notify stakeholders of anomalies and pipeline failures proactively.</li>
+                    <li>Conducted user training sessions and documentation for dashboard usage, enabling wider adoption across teams.</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <h3 class="collapsible">Claim Prediction - Regression Modelling - Cognizant Project</h3>
+                <ul class="collapsible-content" style="display:none;">
+                    <li>Developed regression models to predict accident claim estimates and claimant Return-To-Work (RTW) durations.</li>
+                    <li>Automated data retrieval, model training, validation, and testing using MySQL and Databricks.</li>
+                    <li>Conducted extensive Exploratory Data Analysis (EDA) and optimal feature selection for scalable ML solutions.</li>
+                    <li>Designed and monitored CI/CD pipelines with MLflow for model training, evaluation, and deployment.</li>
+                    <li>Managed MLOps workflows including model registry, experiment tracking, and endpoint deployment (ACS/AKS).</li>
+                    <li>Built project progress dashboards in Databricks for daily team meetings and stakeholder updates.</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <h3 class="collapsible">Text-Based LLM  - Shyam Steel Project</h3>
+                <ul class="collapsible-content" style="display:none;">
+                    <li>Designed and implemented a GenAI chatbot for summarizing dealer scheme documents using Azure OpenAI Services.</li>
+                    <li>Utilized Azure OpenAI’s GPT models for text summarization and embedding generation workflows.</li>
+                    <li>Implemented intelligent data chunking and prompt engineering to optimize token consumption and API call efficiency.</li>
+                    <li>Managed context window limitations and ensured smooth production deployment via Azure Function Apps and Azure App Services.</li>
+                    <li>Deployed and monitored the LLM solution through Azure Machine Learning endpoints, ensuring scalability and performance.</li>
+                    <li>Integrated secured authentication and governance protocols for LLM API access across environments.</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <h3 class="collapsible">Multiple In-House AI-ML and Dashboarding  - Amazon Project</h3>
+                <ul class="collapsible-content" style="display:none;">
+                    <li>Developed regression models for COVID-related wage payout benchmarking in North American warehouses.</li>
+                    <li>Built classification models to identify optimal warehouse locations for vaccine center setups.</li>
+                    <li>Conducted R&D using AWS Sagemaker for model development and endpoint management.</li>
+                    <li>Created interactive dashboards in AWS QuickSight for executive stakeholder reporting.</li>
+                    <li>Executed ETL pipelines using AWS Glue and fine-tuned models via hyperparameter optimization.</li>
+                    <li>Experimented with GenAI foundation models on Bedrock and developed Lambda functions for text summarization and image generation (Stable Diffusion models).</li>
+                </ul>
+            </div>
+        </section>
+        <section id="contact" class="contact-section">
+            <h2 style="text-align:center;">Contact Me</h2>
+            <div class="contact-card">
+                <form id="contactForm">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Type your message here..." required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div id="formMessage"></div>
+                <script>
+                document.getElementById('contactForm').addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const form = e.target;
+                    const name = form.name.value;
+                    const email = form.email.value;
+                    const message = form.message.value;
+                    const formMessage = document.getElementById('formMessage');
+                    formMessage.textContent = 'Sending...';
+                    try {
+                        const res = await fetch('http://localhost:5000/submit-message', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ name, email, message })
+                        });
+                        const data = await res.json();
+                        if (data.success) {
+                            formMessage.textContent = 'Message sent successfully!';
+                            form.reset();
+                        } else {
+                            formMessage.textContent = 'Error: ' + (data.error || 'Could not send message.');
+                        }
+                    } catch (err) {
+                        formMessage.textContent = 'Error: Could not connect to server.';
+                    }
+                });
+                </script>
+            </div>
+
+        </section>
+
+        <!-- Floating Chatbot Widget -->
+        <div id="careerChatbotWidget" class="chatbot-widget">
+            <button id="chatbotToggle" class="chatbot-toggle">💬</button>
+            <div class="chatbot-popup" id="chatbotPopup">
+                <h3>Ask About My Career</h3>
+                <div class="chat-window" id="chatWindow">
+                    <div class="chat-message bot">Hi! Ask me anything about my career, experience, or skills.</div>
+                </div>
+                <div class="chat-input-row">
+                    <input type="text" id="chatInput" placeholder="Type your question..." autocomplete="off">
+                    <button id="sendChatBtn">Send</button>
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Chandan Sengupta. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+    // Matrix hacking animation
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d');
+    let w = window.innerWidth;
+    let h = window.innerHeight;
+    function resizeMatrix() {
+        w = window.innerWidth;
+        h = window.innerHeight;
+        canvas.width = w;
+        canvas.height = h;
+    }
+    resizeMatrix();
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*';
+    const fontSize = 18;
+    let columns = Math.floor(w / fontSize);
+    let drops = Array(columns).fill(1);
+    function drawMatrix() {
+        ctx.clearRect(0, 0, w, h); // Make canvas background transparent for blending
+        ctx.font = fontSize + 'px monospace';
+        ctx.fillStyle = '#0f0';
+        for (let i = 0; i < columns; i++) {
+            const text = letters[Math.floor(Math.random() * letters.length)];
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            if (drops[i] * fontSize > h && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+    }
+    setInterval(drawMatrix, 50);
+    window.addEventListener('resize', () => {
+        resizeMatrix();
+        columns = Math.floor(w / fontSize);
+        drops = Array(columns).fill(1);
+    });
+    // Door overlay logic
+    const doorOverlay = document.getElementById('doorOverlay');
+    const openDoorBtn = document.getElementById('openDoorBtn');
+    let doorOpen = false;
+    openDoorBtn.addEventListener('click', function() {
+        doorOverlay.style.transform = 'translateY(-100vh)';
+        doorOpen = true;
+    });
+    // Add close button to header
+    const header = document.querySelector('header');
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'Adios';
+    closeBtn.style.padding = '6px 18px';
+    closeBtn.style.fontSize = '1em';
+    closeBtn.style.border = 'none';
+    closeBtn.style.borderRadius = '6px';
+    closeBtn.style.background = '#f5c16c';
+    closeBtn.style.color = '#222';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.style.marginLeft = '24px';
+    closeBtn.style.position = 'absolute';
+    closeBtn.style.right = '32px';
+    closeBtn.style.top = '24px';
+    header.style.position = 'relative';
+    header.appendChild(closeBtn);
+    closeBtn.addEventListener('click', function() {
+        doorOverlay.style.transform = 'translateY(0)';
+        doorOpen = false;
+    });
+    </script>
+</body>
+</html>
