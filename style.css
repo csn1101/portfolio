@@ -1,122 +1,94 @@
 /* Responsive styles for mobile and tablet */
-body, html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Arial, sans-serif;
-}
+/* ...existing code... */
 
-header .container {
-  padding: 16px 8px;
-  max-width: 100vw;
-}
-
-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-nav ul li a {
-  font-size: 1em;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background 0.2s;
-}
-
-nav ul li a:hover {
-  background: #f5c16c;
-  color: #222;
-}
-
-.container {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 12px;
-}
-
-main {
-  padding: 0 8px;
-}
-
-.section {
-  margin-bottom: 32px;
-  padding: 16px 0;
-}
-
+/* --- MOBILE & PORTRAIT RESPONSIVE STYLES --- */
 @media (max-width: 900px) {
   .container {
+    width: 98%;
     max-width: 100vw;
     padding: 0 8px;
   }
+  .section {
+    padding: 18px 8px;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .skills-table th, .skills-table td {
+    padding: 10px 6px;
+    font-size: 0.98em;
+  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px), (orientation: portrait) {
   header .container {
     flex-direction: column;
     align-items: flex-start;
     padding: 12px 4px;
   }
-  h1 {
-    font-size: 1.5em;
+  header h1, h1 {
+    font-size: 1.3em;
   }
   .tagline {
-    font-size: 1em;
+    font-size: 0.95em;
     word-break: break-word;
   }
   nav ul {
     flex-direction: column;
     gap: 8px;
+    align-items: flex-start;
+  }
+  .container {
+    padding: 0 6px;
   }
   .section {
     padding: 8px 0;
+    margin-bottom: 18px;
   }
-  .experience-item h3 img,
-  .experience-item h3 {
-    height: 32px !important;
-    font-size: 1em;
-  }
-  .project-item h3 {
-    font-size: 1em;
+  .skills-table-collapsible th,
+  .skills-table-collapsible td {
+    padding: 8px 4px;
+    font-size: 0.95em;
   }
   .contact-card {
     padding: 8px;
+    max-width: 98vw;
   }
-  #doorOverlay {
-    padding: 0;
+  .chatbot-popup {
+    width: 98vw;
+    min-width: 180px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    padding: 8px;
+  }
+  #doorOverlay img,
+  #doorOverlay canvas {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover;
   }
   #openDoorBtn {
-    font-size: 1em !important;
-    padding: 10px 24px !important;
+    font-size: 1em;
+    padding: 10px 18px;
     bottom: 6vh !important;
   }
 }
 
-/* Door overlay responsive */
-#doorOverlay img,
-#doorOverlay canvas {
-  width: 100vw !important;
-  height: 100vh !important;
-  max-width: 100vw;
-  max-height: 100vh;
-}
-
-/* Contact form responsive */
-.contact-card form input,
-.contact-card form textarea {
-  width: 100%;
-  font-size: 1em;
-  margin-bottom: 8px;
-  box-sizing: border-box;
-}
-.contact-card form button {
-  width: 100%;
-  font-size: 1em;
-  padding: 10px;
+@media (max-width: 400px) {
+  header h1 {
+    font-size: 1em;
+  }
+  .section {
+    padding: 4px;
+  }
+  .contact-card {
+    padding: 4px;
+  }
+  .chatbot-popup {
+    padding: 4px;
+  }
 }
 /* Collapsible Experience/Project Sections */
 .collapsible {
