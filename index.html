@@ -11,8 +11,8 @@
     <div id="doorOverlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:#111;z-index:9999;transition:transform 1s cubic-bezier(.77,0,.18,1);overflow:hidden;">
         <img src="logos/door.jpg" alt="Closed Door" style="position:absolute;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:1;">
         <canvas id="matrixCanvas" style="position:absolute;top:0;left:0;width:100vw;height:100vh;z-index:2;pointer-events:none;"></canvas>
-        <canvas id="nameMatrixCanvas" style="position:absolute;top:0;left:0;width:100vw;height:100vh;z-index:3;pointer-events:none;"></canvas>
         <button id="openDoorBtn" style="position:absolute;bottom:10vh;left:50%;transform:translateX(-50%);padding:16px 40px;font-size:1.3em;border:none;border-radius:10px;background:#f5c16c;color:#222;cursor:pointer;z-index:3;box-shadow:0 2px 12px #000;">Get Inside</button>
+        <canvas id="nameMatrixCanvas" style="position:absolute;top:0;left:0;width:100vw;height:100vh;z-index:10;pointer-events:none;background:transparent;" aria-label="Name Matrix Animation">Your browser does not support the canvas element.</canvas>
     </div>
     <header>
         <div class="container">
@@ -306,72 +306,77 @@
     <script>
     // Name & Designation Matrix Drop Animation (stays after drop)
     const nameCanvas = document.getElementById('nameMatrixCanvas');
-    const nameCtx = nameCanvas.getContext('2d');
-    let nameW = window.innerWidth;
-    let nameH = window.innerHeight;
-    function resizeNameMatrix() {
-        nameW = window.innerWidth;
-        nameH = window.innerHeight;
-        nameCanvas.width = nameW;
-        nameCanvas.height = nameH;
-        // Redraw if already dropped
-        if (nameDropped) drawNameAndDesignation(nameY, true);
-    }
-    resizeNameMatrix();
-    window.addEventListener('resize', resizeNameMatrix);
-    const nameText = 'CHANDAN SENGUPTA';
-    const designationText = 'AI Engineer';
-    function getFontSize() {
-        return Math.max(32, Math.floor(nameW / 18));
-    }
-    function getDesignationFontSize() {
-        return Math.max(20, Math.floor(nameW / 28));
-    }
-    let nameFontSize = getFontSize();
-    let designationFontSize = getDesignationFontSize();
-    let nameY = -nameFontSize;
-    let designationY = -nameFontSize - 40;
-    let nameDropped = false;
-    function drawNameAndDesignation(y, final) {
-        nameCtx.clearRect(0, 0, nameW, nameH);
-        nameFontSize = getFontSize();
-        designationFontSize = getDesignationFontSize();
-        // Name
-        nameCtx.font = `bold ${nameFontSize}px monospace`;
-        nameCtx.textAlign = 'center';
-        nameCtx.shadowColor = '#0f0';
-        nameCtx.shadowBlur = 18;
-        nameCtx.fillStyle = '#0f0';
-        nameCtx.fillText(nameText, nameW / 2, y);
-        // Designation
-        nameCtx.font = `bold ${designationFontSize}px monospace`;
-        nameCtx.shadowBlur = 10;
-        nameCtx.fillStyle = '#0f0';
-        nameCtx.fillText(designationText, nameW / 2, y + nameFontSize + 18);
-        nameCtx.shadowBlur = 0;
-        if (final) {
-            // Optionally add a subtle glow or underline
-            nameCtx.globalAlpha = 0.18;
-            nameCtx.fillRect(nameW/2 - nameFontSize*3, y + nameFontSize + 28, nameFontSize*6, 4);
-            nameCtx.globalAlpha = 1;
+    if (!nameCanvas) {
+        console.error('nameMatrixCanvas not found!');
+    } else {
+        console.log('nameMatrixCanvas script running.');
+        const nameCtx = nameCanvas.getContext('2d');
+        let nameW = window.innerWidth;
+        let nameH = window.innerHeight;
+        function resizeNameMatrix() {
+            nameW = window.innerWidth;
+            nameH = window.innerHeight;
+            nameCanvas.width = nameW;
+            nameCanvas.height = nameH;
+            // Redraw if already dropped
+            if (nameDropped) drawNameAndDesignation(nameY, true);
         }
-    }
-    function animateNameDrop() {
-        if (nameY < nameH / 2) {
-            nameY += 18;
-            designationY += 18;
-            drawNameAndDesignation(nameY, false);
-            requestAnimationFrame(animateNameDrop);
-        } else {
-            nameDropped = true;
-            drawNameAndDesignation(nameH / 2, true);
+        resizeNameMatrix();
+        window.addEventListener('resize', resizeNameMatrix);
+        const nameText = 'CHANDAN SENGUPTA';
+        const designationText = 'AI Engineer';
+        function getFontSize() {
+            return Math.max(32, Math.floor(nameW / 18));
         }
+        function getDesignationFontSize() {
+            return Math.max(20, Math.floor(nameW / 28));
+        }
+        let nameFontSize = getFontSize();
+        let designationFontSize = getDesignationFontSize();
+        let nameY = -nameFontSize;
+        let designationY = -nameFontSize - 40;
+        let nameDropped = false;
+        function drawNameAndDesignation(y, final) {
+            nameCtx.clearRect(0, 0, nameW, nameH);
+            nameFontSize = getFontSize();
+            designationFontSize = getDesignationFontSize();
+            // Name
+            nameCtx.font = `bold ${nameFontSize}px monospace`;
+            nameCtx.textAlign = 'center';
+            nameCtx.shadowColor = '#0f0';
+            nameCtx.shadowBlur = 18;
+            nameCtx.fillStyle = '#0f0';
+            nameCtx.fillText(nameText, nameW / 2, y);
+            // Designation
+            nameCtx.font = `bold ${designationFontSize}px monospace`;
+            nameCtx.shadowBlur = 10;
+            nameCtx.fillStyle = '#0f0';
+            nameCtx.fillText(designationText, nameW / 2, y + nameFontSize + 18);
+            nameCtx.shadowBlur = 0;
+            if (final) {
+                // Optionally add a subtle glow or underline
+                nameCtx.globalAlpha = 0.18;
+                nameCtx.fillRect(nameW/2 - nameFontSize*3, y + nameFontSize + 28, nameFontSize*6, 4);
+                nameCtx.globalAlpha = 1;
+            }
+        }
+        function animateNameDrop() {
+            if (nameY < nameH / 2) {
+                nameY += 18;
+                designationY += 18;
+                drawNameAndDesignation(nameY, false);
+                requestAnimationFrame(animateNameDrop);
+            } else {
+                nameDropped = true;
+                drawNameAndDesignation(nameH / 2, true);
+            }
+        }
+        animateNameDrop();
+        // Redraw on resize if already dropped
+        window.addEventListener('resize', () => {
+            if (nameDropped) drawNameAndDesignation(nameH / 2, true);
+        });
     }
-    animateNameDrop();
-    // Redraw on resize if already dropped
-    window.addEventListener('resize', () => {
-        if (nameDropped) drawNameAndDesignation(nameH / 2, true);
-    });
     </script>
     <script>
     // Matrix hacking animation
