@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Portfolio - Chandan Sengupta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - AI Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,16 +15,16 @@
         <button id="openDoorBtn" style="position:absolute;bottom:10vh;left:50%;transform:translateX(-50%);padding:16px 40px;font-size:1.3em;border:none;border-radius:10px;background:#f5c16c;color:#222;cursor:pointer;z-index:3;box-shadow:0 2px 12px #000;">Get Inside</button>
         <canvas id="nameMatrixCanvas" style="position:absolute;top:0;left:0;width:100vw;height:100vh;z-index:10;pointer-events:none;background:transparent;" aria-label="Name Matrix Animation">Your browser does not support the canvas element.</canvas>
     </div>
-    <header>
+    <header class="sticky-header">
         <div class="container">
-            <h1>Chandan Sengupta</h1>
-            <p class="tagline">AI Engineer | Kolkata | csengupta1101@outlook.com | +917044083275 </p>
+            <h1 class="neon-text">Chandan Sengupta</h1>
+            <p class="tagline">AI Engineer | Innovating the Future</p>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Let's Connect</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,13 +32,7 @@
     <main style="animation: fadeInUp 1.2s;">
         <section id="about" class="section">
             <h2>About Me</h2>
-            <p>Results-driven 
-            Data Scientist with 4.5+ years of experience across insurance, manufacturing, and e-commerce 
-            domains. Proficient in Python, SQL, Machine Learning (ML), Deep Learning (DL), 
-            and Large Language Models (LLMs), with Hands-on experience with various cloud platforms 
-            (e.g., AWS, Azure). Prefer Azure  / Synapse/OpenAI/VsCode/ADF. Adept at building end-to-end 
-            data-driven products, optimizing business processes, and translating complex data into 
-            actionable insights to drive strategic decisions.</p>
+            <p>Results-driven AI Engineer with expertise in Machine Learning, Deep Learning, and Cloud Platforms. Passionate about building innovative solutions that drive business success.</p>
         </section>
 
         <section id="skills-by-type" class="section">
@@ -246,8 +241,8 @@
                 <form id="contactForm">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Type your message here..." required></textarea>
-                    <button type="submit">Send Message</button>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="glow-button">Send Message</button>
                 </form>
                 <div id="formMessage"></div>
                 <script>
@@ -278,7 +273,12 @@
                 });
                 </script>
             </div>
-
+            <div class="contact-info">
+                <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+1234567890</a></p>
+                <p>LinkedIn: <a href="#" target="_blank"><img src="logos/linkedin.png" alt="LinkedIn" style="height:20px; vertical-align:middle;"> Your LinkedIn Profile</a></p>
+                <p>GitHub: <a href="#" target="_blank"><img src="logos/github.png" alt="GitHub" style="height:20px; vertical-align:middle;"> Your GitHub Profile</a></p>
+            </div>
         </section>
         <section id="job-search" class="section">
             <h2>Job Search</h2>
@@ -340,6 +340,10 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 Chandan Sengupta. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><img src="logos/linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="logos/github.png" alt="GitHub"></a>
+            </div>
         </div>
     </footer>
     <script src="script.js"></script>

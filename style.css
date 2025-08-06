@@ -465,11 +465,11 @@
 }
 
 body {
-    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #eaeaea;
     margin: 0;
-    background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
-    color: #222;
-    min-height: 100vh;
+    padding: 0;
 }
 
 header {
@@ -694,14 +694,9 @@ button:hover {
 }
 
 footer {
-    background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
-    color: #fff;
+    background: #0f3460;
+    padding: 20px 0;
     text-align: center;
-    padding: 28px 0;
-    margin-top: 48px;
-    border-radius: 0 0 32px 32px;
-    box-shadow: 0 -2px 12px rgba(99,102,241,0.08);
-    font-size: 1.08em;
 }
 
 /* Skills Table Section */
@@ -780,5 +775,107 @@ footer {
 .contact-details strong {
   color: #ffb347;
   font-weight: 600;
+}
+
+.neon-text {
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background: #0f3460;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #eaeaea;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00ffcc;
+}
+
+.section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.card {
+    background: #1a1a2e;
+    border: 1px solid #00ffcc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.glow-button {
+    background: #00ffcc;
+    color: #16213e;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00ffcc;
+    transition: box-shadow 0.3s;
+}
+
+.glow-button:hover {
+    box-shadow: 0 0 20px #00ffcc;
+}
+
+h1, h2, h3 {
+    color: #00ffcc;
+    text-shadow: none;
+}
+
+.section h2 {
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Remove glowing effect for specific headings */
+#about h2, #experience h2, #projects h2 {
+    text-shadow: none;
+}
+
+/* Remove glowing effect for Skills heading */
+#skills-by-type h2 {
+    text-shadow: none;
+}
+
+#about p {
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+    line-height: 1.6;
 }
 
