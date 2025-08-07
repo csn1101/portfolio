@@ -274,53 +274,13 @@
                 </script>
             </div>
             <div class="contact-info">
-                <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-                <p>Phone: <a href="tel:+1234567890">+1234567890</a></p>
+                <p>Email: <a href="mailto:your-email@example.com">csengupta1101@outlook.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+91 7044083275</a></p>
                 <p>LinkedIn: <a href="#" target="_blank"><img src="logos/linkedin.png" alt="LinkedIn" style="height:20px; vertical-align:middle;"> Your LinkedIn Profile</a></p>
                 <p>GitHub: <a href="#" target="_blank"><img src="logos/github.png" alt="GitHub" style="height:20px; vertical-align:middle;"> Your GitHub Profile</a></p>
             </div>
         </section>
-        <section id="job-search" class="section">
-            <h2>Job Search</h2>
-            <form id="jobSearchForm">
-                <input type="text" name="jobTitle" placeholder="Job Title" required>
-                <input type="text" name="location" placeholder="Location" required>
-                <button type="submit">Search Jobs</button>
-            </form>
-            <div id="jobResults"></div>
-        </section>
-        <script>
-            document.getElementById('jobSearchForm').addEventListener('submit', async function(e) {
-                e.preventDefault();
-                const form = e.target;
-                const jobTitle = form.jobTitle.value;
-                const location = form.location.value;
-                const jobResults = document.getElementById('jobResults');
-                jobResults.textContent = 'Searching for jobs...';
-                try {
-                    const res = await fetch('http://localhost:5000/search-jobs', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ jobTitle, location })
-                    });
-                    const data = await res.json();
-                    if (data.success) {
-                        jobResults.innerHTML = data.jobs.map(job => `
-                            <div class="job-item">
-                                <h3>${job.title}</h3>
-                                <p>${job.company} - ${job.location}</p>
-                                <a href="${job.url}" target="_blank">Apply</a>
-                            </div>
-                        `).join('');
-                    } else {
-                        jobResults.textContent = 'No jobs found.';
-                    }
-                } catch (err) {
-                    jobResults.textContent = 'Error: Could not fetch jobs.';
-                }
-            });
-        </script>
-
+        <!-- Job Search section removed -->
         <!-- Floating Chatbot Widget -->
         <div id="careerChatbotWidget" class="chatbot-widget">
             <button id="chatbotToggle" class="chatbot-toggle">💬</button>
